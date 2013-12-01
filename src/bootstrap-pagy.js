@@ -26,8 +26,8 @@
 		this.isLast = function() { return page == options.totalPages }
 		this.isPrev = function() { return page == (options.currentPage - 1) }
 		this.isNext = function() { return page == (options.currentPage + 1) }
-		this.isLeftOuter = function() { return page <= (options.left || options.outerWindow) }
-		this.isRightOuter = function() { return (options.totalPages - page) < (options.right || options.outerWindow) }
+		this.isLeftOuter = function() { return page <= options.outerWindow }
+		this.isRightOuter = function() { return (options.totalPages - page) < options.outerWindow }
 		this.isInsideWindow = function() { return Math.abs(options.currentPage -page) <= options.innerWindow }
 		this.number = function() { return page }
 	}
@@ -142,8 +142,6 @@
   , totalPages: null
   , innerWindow: 2
   , outerWindow: 0
-  , left: 0
-  , right: 0
   , first: '&laquo;'
   , prev: '&lsaquo;'
   , next: '&rsaquo;'
