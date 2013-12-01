@@ -59,7 +59,7 @@ $(".pagination").pagy("page", 4, 20);
 
 ## Demo
 
-http://medihack.github.io/bootstrap-pagy/demos/
+http://medihack.github.io/bootstrap-pagy/demo/
 
 ## License
 
