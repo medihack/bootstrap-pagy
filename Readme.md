@@ -35,8 +35,6 @@ $(".pagination").pagy({
     totalPages: null,
     innerWindow: 2,
     outerWindow: 0,
-    left: 0,
-    right: 0,
     first: '&laquo;',
     prev: '&lsaquo;',
     next: '&rsaquo;',
