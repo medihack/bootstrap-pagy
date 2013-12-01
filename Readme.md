@@ -20,7 +20,7 @@ soon to come
 
 ## Demo
 
-soon to come
+http://medihack.github.io/bootstrap-pagy/demos/
 
 ## License
 
