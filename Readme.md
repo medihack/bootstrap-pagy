@@ -20,6 +20,15 @@ In contrast to those plugins Bootstrap Pagy provides a fixed inner window (compa
 * Code under Apache License
 * Only depends on jQuery (for Javascript) and Bootstrap (for Markup)
 
+## Demo
+
+http://medihack.github.io/bootstrap-pagy/demo/
+
+## Download
+
+* [Development (not minified)](https://raw.github.com/medihack/bootstrap-pagy/master/src/bootstrap-pagy.js)
+* [Production (minified)](https://raw.github.com/medihack/bootstrap-pagy/master/src/bootstrap-pagy.min.js)
+
 ## Usage
 
 Minimal usage:
@@ -60,10 +69,6 @@ Set current page and total pages programmatically:
 ```js
 $(".pagination").pagy("page", 4, 20);
 ```
-
-## Demo
-
-http://medihack.github.io/bootstrap-pagy/demo/
 
 ## License
 
