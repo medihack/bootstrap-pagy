@@ -1,0 +1,27 @@
+{
+  "name": "bootstrap-pagy",
+  "version": "0.1.0",
+  "homepage": "https://github.com/medihack/bootstrap-pagy",
+  "authors": [
+    "medihack <schlamp@gmx.de>"
+  ],
+  "description": "A jQuery plugin that simplifies the usage of the Bootstrap Pagination component.",
+  "main": "src/bootstrap-pagy.js",
+  "keywords": [
+    "bootstrap",
+    "pagination",
+    "jquery"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+	"dependencies": {
+		"jquery": ">= 1.9.0",
+		"bootstrap": ">= 2.0.0"
+	}
+}
