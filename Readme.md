@@ -16,7 +16,46 @@ Bootstrap Pagy is a jQuery plugin that simplifies the use of the Bootstrap Pagin
 
 ## Usage
 
-soon to come
+Minimal usage:
+```js
+$(".pagination").pagy({
+  totalPages: 20,
+  currentPage: 3,
+  page: function(page) {
+    // do something when page changed;
+    return true;
+  }
+});
+```
+
+All available (default) options:
+```js
+$(".pagination").pagy({
+    currentPage: null,
+    totalPages: null,
+    innerWindow: 2,
+    outerWindow: 0,
+    left: 0,
+    right: 0,
+    first: '&laquo;',
+    prev: '&lsaquo;',
+    next: '&rsaquo;',
+    last: '&raquo;',
+    gap: '...',
+    truncate: true,
+    page: function(page) { return true }
+});
+```
+
+Set current page programmatically:
+```js
+$(".pagination").pagy("page", 4);
+```
+
+Set current page and total pages programmatically:
+```js
+$(".pagination").pagy("page", 4, 20);
+```
 
 ## Demo
 
