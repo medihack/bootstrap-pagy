@@ -6,8 +6,9 @@ Bootstrap Pagy is a jQuery plugin that simplifies the use of the Bootstrap Pagin
 
 ## Why
 
-There are already other pagination plugins using the Bootstrap markup: [boogpag](http://botmonster.com/jquery-bootpag) and [Bootstrap Paginator](http://bootstrappaginator.org/)
-In contrast to those plugins Bootstrap Pagy provides a fixed inner window (compare the demos to see what this means). The algorithm used is inspired by [Kaminari](https://github.com/amatsuda/kaminari).
+There are already other pagination plugins using the Bootstrap markup: [boogpag](http://botmonster.com/jquery-bootpag) and [Bootstrap Paginator](http://bootstrappaginator.org/).
+
+In contrast to those plugins Bootstrap Pagy provides a fixed inner window (compare the demos to see what this means). The page layout algorithm used is inspired by [Kaminari](https://github.com/amatsuda/kaminari).
 
 ## Features
 
