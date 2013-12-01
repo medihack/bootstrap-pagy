@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Bootstrap Pagy Demo</title>
+
+	<script src="../lib/jquery.js"></script>
+	<script src="../lib/run_prettify.js"></script>
+	<script src="../src/bootstrap-pagy.js"></script>
+	<link rel="stylesheet" href="../lib/bootstrap.css" type="text/css" />
+	<style type="text/css">
+		ol.linenums {
+			margin-left: 0px !important;
+			padding-left: 40px !important;
+		}
+	</style>
+
+	<script type="text/javascript">
+		$(function() {
+			$(".pagination:eq(0)").pagy({
+				totalPages: 20,
+				currentPage: 3
+			});
+
+			$(".pagination:eq(1)").pagy({
+				totalPages: 20,
+				currentPage: 3,
+				page: function(page) {
+					$("#current-page").text(page);
+					return true;
+				}
+			});
+
+			$(".pagination:eq(2)").pagy({
+				totalPages: 20,
+				currentPage: 3,
+				truncate: false
+			});
+
+			$(".pagination:eq(3)").pagy({
+				totalPages: 20,
+				currentPage: 3,
+				outerWindow: 1,
+				first: null,
+				last: null
+			});
+
+			$(".pagination:eq(4)").pagy({
+				totalPages: 20,
+				currentPage: 3
+			});
+
+			$("#current-page-form").on("submit", function() {
+				var currentPage = parseInt($(this).find("input").val());
+				$(".pagination:eq(4)").pagy("page", currentPage);
+				return false;
+			});
+
+			$(".pagination:eq(5)").pagy({
+				totalPages: 20,
+				currentPage: 3
+			});
+
+			$("#total-pages-form").on("submit", function() {
+				var currentPage = parseInt($(this).find("input:eq(0)").val());
+				var totalPages = parseInt($(this).find("input:eq(1)").val());
+				$(".pagination:eq(5)").pagy("page", currentPage, totalPages);
+				return false;
+			});
+		})
+	</script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+
+		<h1>Bootstrap Pagy Demo</h1>
+
+		<hr>
+
+		<p>All examples assume the the following HTML code in the document:</p>
+
+		<pre class="prettyprint">
+&lt;div class=&quot;pagination&quot;&gt;
+	&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;</pre>
+
+		<hr>
+
+		<p>Usage with default options.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 3
+});</pre>
+
+		<hr>
+
+		<p>Get informed on a page change.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<p>Current Page: <span id="current-page">3</span></p>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 3,
+	page: function(page) {
+		$("#current-page").text(page);
+	}
+});</pre>
+
+		<hr>
+
+		<p>Always show first/last and prev/next.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 3,
+	truncate: false
+});</pre>
+
+		<hr>
+
+		<p>With outer window instead of first/last.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 3,
+	outerWindow: 1,
+  first: null,
+  last: null
+});</pre>
+
+		<hr>
+
+		<p>Set current page programmatically.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<form id="current-page-form" class="form-inline">
+			<input type="text" class="input-small" placeholder="Current Page">
+			<button type="submit" class="btn">Set</button>
+		</form>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 3
+});
+
+$("form").on("submit", function() {
+	var currentPage = parseInt($(this).find("input").val());
+	$(".pagination").pagy("page", currentPage);
+	return false;
+});</pre>
+
+		<hr>
+
+		<p>Set current page and total pages programmatically.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<form id="total-pages-form" class="form-inline">
+			<input type="text" class="input-small" placeholder="Current Page">
+			<input type="text" class="input-small" placeholder="Total Pages">
+			<button type="submit" class="btn">Set</button>
+		</form>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 3
+});
+
+$("form").on("submit", function() {
+	var currentPage = parseInt($(this).find("input:eq(0)").val());
+	var totalPages = parseInt($(this).find("input:eq(1)").val());
+	$(".pagination").pagy("page", currentPage, totalPages);
+	return false;
+});</pre>
+
+	</div>
+
+</div>
+
+</body>
+</html>
