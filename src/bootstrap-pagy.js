@@ -158,12 +158,12 @@
 
 		var currentPageProxy = new PageProxy(options, options.currentPage);
 
-		if (!currentPageProxy.isFirst() || !this.options.truncate) {
-			if (this.options.first) {
+		if (!currentPageProxy.isFirst() || !options.truncate) {
+			if (options.first) {
 				this.$ul.append(View.firstPage(this, options, currentPageProxy));
 			}
 
-			if (this.options.prev) {
+			if (options.prev) {
 				this.$ul.append(View.prevPage(this, options, currentPageProxy));
 			}
 		}
@@ -176,19 +176,19 @@
 				wasTruncated = false;
 			}
 			else {
-				if (!wasTruncated && this.options.outerWindow > 0) {
+				if (!wasTruncated && options.outerWindow > 0) {
 					this.$ul.append(View.gap(this, options));
 					wasTruncated = true;
 				}
 			}
 		}
 
-		if (!currentPageProxy.isLast() || !this.options.truncate) {
-			if (this.options.next) {
+		if (!currentPageProxy.isLast() || !options.truncate) {
+			if (options.next) {
 				this.$ul.append(View.nextPage(this, options, currentPageProxy));
 			}
 
-			if (this.options.last) {
+			if (options.last) {
 				this.$ul.append(View.lastPage(this, options, currentPageProxy));
 			}
 		}
