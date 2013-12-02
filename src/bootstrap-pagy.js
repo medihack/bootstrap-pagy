@@ -28,7 +28,7 @@
 		this.isNext = function() { return page == (options.currentPage + 1) }
 		this.isLeftOuter = function() { return page <= options.outerWindow }
 		this.isRightOuter = function() { return (options.totalPages - page) < options.outerWindow }
-		this.isInsideWindow = function() { return Math.abs(options.currentPage -page) <= options.innerWindow }
+		this.isInsideWindow = function() { return Math.abs(options.currentPage - page) <= options.innerWindow }
 		this.number = function() { return page }
 	}
 
@@ -154,7 +154,13 @@
 	Pagy.prototype.render = function () {
 		var options = this.options;
 
-		if (!options.totalPages) return;
+		if (!options.totalPages) {
+			this.$element.hide();
+			return;
+		}
+		else {
+			this.$element.show();
+		}
 
 		var currentPageProxy = new PageProxy(options, options.currentPage);
 
