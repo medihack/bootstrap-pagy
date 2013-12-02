@@ -154,6 +154,8 @@
 	Pagy.prototype.render = function () {
 		var options = this.options;
 
+		if (!options.totalPages) return;
+
 		var currentPageProxy = new PageProxy(options, options.currentPage);
 
 		if (!currentPageProxy.isFirst() || !this.options.truncate) {
