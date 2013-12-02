@@ -21,15 +21,41 @@
 +function ($) { "use strict";
 
 	var PageProxy = function(options, page) {
-		this.isCurrent = function() { return page == options.currentPage }
-		this.isFirst = function() { return page == 1 }
-		this.isLast = function() { return page == options.totalPages }
-		this.isPrev = function() { return page == (options.currentPage - 1) }
-		this.isNext = function() { return page == (options.currentPage + 1) }
-		this.isLeftOuter = function() { return page <= options.outerWindow }
-		this.isRightOuter = function() { return (options.totalPages - page) < options.outerWindow }
-		this.isInsideWindow = function() { return Math.abs(options.currentPage - page) <= options.innerWindow }
-		this.number = function() { return page }
+		this.isCurrent = function() {
+			return page == options.currentPage;
+		}
+
+		this.isFirst = function() {
+			return page == 1;
+		}
+
+		this.isLast = function() {
+			return page == options.totalPages;
+		}
+
+		this.isPrev = function() {
+			return page == (options.currentPage - 1);
+		}
+
+		this.isNext = function() {
+			return page == (options.currentPage + 1);
+		}
+
+		this.isLeftOuter = function() {
+			return page <= options.outerWindow;
+		}
+
+		this.isRightOuter = function() {
+			return (options.totalPages - page) < options.outerWindow;
+		}
+
+		this.isInsideWindow = function() {
+			return Math.abs(options.currentPage - page) <= options.innerWindow;
+		}
+
+		this.number = function() {
+			return page;
+		}
 	}
 
 	var View = {
@@ -147,7 +173,7 @@
   , next: '&rsaquo;'
   , last: '&raquo;'
   , gap: '...'
-	, truncate: true
+	, truncate: false
   , page: function(page) { return true }
   }
 

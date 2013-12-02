@@ -55,7 +55,7 @@ $(".pagination").pagy({
     next: '&rsaquo;',
     last: '&raquo;',
     gap: '...',
-    truncate: true,
+    truncate: false,
     page: function(page) { return true }
 });
 ```

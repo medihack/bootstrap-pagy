@@ -34,7 +34,7 @@
 			$(".pagination:eq(2)").pagy({
 				totalPages: 20,
 				currentPage: 3,
-				truncate: false
+				truncate: true
 			});
 
 			$(".pagination:eq(3)").pagy({
@@ -123,7 +123,7 @@ $(".pagination").pagy({
 
 		<hr>
 
-		<p>Always show first/last and prev/next.</p>
+		<p>Truncate first/next and prev/last for first resp. last page.</p>
 
 		<div class="pagination">
 			<ul></ul>
@@ -133,7 +133,7 @@ $(".pagination").pagy({
 $(".pagination").pagy({
 	totalPages: 20,
 	currentPage: 3,
-	truncate: false
+	truncate: true
 });</pre>
 
 		<hr>
