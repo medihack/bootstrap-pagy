@@ -50,7 +50,15 @@
 		}
 
 		this.isInsideWindow = function() {
-			return Math.abs(options.currentPage - page) <= options.innerWindow;
+			if (options.currentPage < options.innerWindow + 1) {
+				return page <= ((options.innerWindow * 2) + 1);
+			}
+			else if (options.currentPage > (options.totalPages - options.innerWindow)) {
+				return (options.totalPages - page) <= (options.innerWindow * 2);
+			}
+			else {
+				return Math.abs(options.currentPage - page) <= options.innerWindow;
+			}
 		}
 
 		this.number = function() {
@@ -172,7 +180,7 @@
   , prev: '&lsaquo;'
   , next: '&rsaquo;'
   , last: '&raquo;'
-  , gap: '...'
+  , gap: '..'
 	, truncate: false
   , page: function(page) { return true }
   }
