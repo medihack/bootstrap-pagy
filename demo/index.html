@@ -40,20 +40,15 @@
 			$(".pagination:eq(3)").pagy({
 				totalPages: 20,
 				currentPage: 1,
-				outerWindow: 1,
-				first: null,
-				last: null
+				innerWindow: 4
 			});
 
 			$(".pagination:eq(4)").pagy({
 				totalPages: 20,
-				currentPage: 1
-			});
-
-			$("#current-page-form").on("submit", function() {
-				var currentPage = parseInt($(this).find("input").val());
-				$(".pagination:eq(4)").pagy("page", currentPage);
-				return false;
+				currentPage: 1,
+				outerWindow: 1,
+				first: null,
+				last: null
 			});
 
 			$(".pagination:eq(5)").pagy({
@@ -61,10 +56,21 @@
 				currentPage: 1
 			});
 
+			$("#current-page-form").on("submit", function() {
+				var currentPage = parseInt($(this).find("input").val());
+				$(".pagination:eq(5)").pagy("page", currentPage);
+				return false;
+			});
+
+			$(".pagination:eq(6)").pagy({
+				totalPages: 20,
+				currentPage: 1
+			});
+
 			$("#total-pages-form").on("submit", function() {
 				var currentPage = parseInt($(this).find("input:eq(0)").val());
 				var totalPages = parseInt($(this).find("input:eq(1)").val());
-				$(".pagination:eq(5)").pagy("page", currentPage, totalPages);
+				$(".pagination:eq(6)").pagy("page", currentPage, totalPages);
 				return false;
 			});
 		})
@@ -99,7 +105,7 @@
 		<pre class="prettyprint">
 $(".pagination").pagy({
 	totalPages: 20,
-	currentPage: 3
+	currentPage: 1
 });</pre>
 
 		<hr>
@@ -115,7 +121,7 @@ $(".pagination").pagy({
 		<pre class="prettyprint">
 $(".pagination").pagy({
 	totalPages: 20,
-	currentPage: 3,
+	currentPage: 1,
 	page: function(page) {
 		$("#current-page").text(page);
 	}
@@ -132,9 +138,25 @@ $(".pagination").pagy({
 		<pre class="prettyprint">
 $(".pagination").pagy({
 	totalPages: 20,
-	currentPage: 3,
+	currentPage: 1,
 	truncate: true
 });</pre>
+
+		<hr>
+
+		<p>Use custom inner window.</p>
+
+		<div class="pagination">
+			<ul></ul>
+		</div>
+
+		<pre class="prettyprint">
+$(".pagination").pagy({
+	totalPages: 20,
+	currentPage: 1,
+	innerWindow: 4
+});</pre>
+
 
 		<hr>
 
@@ -147,7 +169,7 @@ $(".pagination").pagy({
 		<pre class="prettyprint">
 $(".pagination").pagy({
 	totalPages: 20,
-	currentPage: 3,
+	currentPage: 1,
 	outerWindow: 1,
   first: null,
   last: null
@@ -169,7 +191,7 @@ $(".pagination").pagy({
 		<pre class="prettyprint">
 $(".pagination").pagy({
 	totalPages: 20,
-	currentPage: 3
+	currentPage: 1
 });
 
 $("form").on("submit", function() {
@@ -195,7 +217,7 @@ $("form").on("submit", function() {
 		<pre class="prettyprint">
 $(".pagination").pagy({
 	totalPages: 20,
-	currentPage: 3
+	currentPage: 1
 });
 
 $("form").on("submit", function() {
