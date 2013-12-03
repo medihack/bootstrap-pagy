@@ -54,7 +54,7 @@ $(".pagination").pagy({
     prev: '&lsaquo;',
     next: '&rsaquo;',
     last: '&raquo;',
-    gap: '...',
+    gap: '..',
     truncate: false,
     page: function(page) { return true }
 });
